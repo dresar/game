@@ -113,7 +113,7 @@ Pillow==10.0.0        # Image processing
 
 Jika menggunakan Git:
 ```bash
-git clone <repository-url>
+git clone <https://github.com/dresar/game.git>
 cd game
 ```
 
@@ -870,4 +870,5 @@ Jika ada pertanyaan atau masalah:
 ---
 
 *Last Updated: 2025*
+
 
