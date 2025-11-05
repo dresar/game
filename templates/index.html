@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Trader 1400 - Prototype Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #FFD700;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+        
+        .game-info {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .game-info h2 {
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        
+        .game-info p {
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+        
+        .controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .control-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        
+        .control-section h3 {
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        
+        .control-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .control-section li {
+            margin: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .control-section li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+        }
+        
+        .launch-button {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            font-size: 1.5em;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .launch-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .feature h4 {
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+        
+        .note {
+            background: rgba(255, 200, 0, 0.2);
+            border-left: 4px solid #FFD700;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        
+        .note strong {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏴‍☠️ Spice Trader 1400</h1>
+        <p class="subtitle">Prototype Demo - RPG Semi-Open World</p>
+        
+        <div class="game-info">
+            <h2>📖 Cerita</h2>
+            <p>
+                Mulai dari pedagang dari luar negeri yang ingin berdagang ke Indonesia pada tahun 1400 M. 
+                Setelah tinggal di Indonesia untuk waktu yang lama, ia mulai tertarik dengan budaya di 
+                kepulauan ini, kemudian ia mencoba berkeliling ke semua pulau di Indonesia sambil berdagang 
+                dan mengenal banyak budaya dan tradisi.
+            </p>
+        </div>
+        
+        <div class="controls">
+            <div class="control-section">
+                <h3>🎮 Scene Kapal (Ship)</h3>
+                <ul>
+                    <li>WASD / Arrow Keys: Gerakkan kapal</li>
+                    <li>Z: Tembakkan cannonball</li>
+                    <li>Tujuan: Kalahkan 5 enemy untuk menang</li>
+                </ul>
+            </div>
+            
+            <div class="control-section">
+                <h3>🏝️ Scene Pelabuhan (Harbor)</h3>
+                <ul>
+                    <li>WASD / Arrow Keys: Gerakkan karakter</li>
+                    <li>E: Berinteraksi dengan NPC</li>
+                    <li>ESC: Tutup dialog</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h4>⚔️ Combat System</h4>
+                <p>Gunakan cannonball untuk melawan enemy ships</p>
+            </div>
+            <div class="feature">
+                <h4>🛒 Trading System</h4>
+                <p>Beli rempah-rempah di toko pedagang</p>
+            </div>
+            <div class="feature">
+                <h4>🍜 Restaurant System</h4>
+                <p>Coba makanan khas daerah di restoran</p>
+            </div>
+            <div class="feature">
+                <h4>🗺️ Exploration</h4>
+                <p>Jelajahi pelabuhan semi-open world</p>
+            </div>
+        </div>
+        
+        <div class="note">
+            <strong>⚠️ Catatan:</strong> Untuk menjalankan game, buka terminal dan jalankan:
+            <br><code style="background: rgba(0,0,0,0.3); padding: 5px 10px; border-radius: 5px; margin-top: 10px; display: inline-block;">python main.py</code>
+            <br><br>
+            Pastikan Flask server sudah berjalan di port 5000 untuk fitur save/load game state.
+        </div>
+        
+        <a href="#" class="launch-button" onclick="alert('Jalankan: python main.py di terminal'); return false;">
+            🚀 Jalankan Game
+        </a>
+    </div>
+</body>
+</html>
+
